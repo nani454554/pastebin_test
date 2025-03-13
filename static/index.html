@@ -10,12 +10,23 @@
     <div class="container">
         <h1>Pastebin Clone</h1>
         <textarea id="snippet-content" placeholder="Enter your text here..."></textarea>
+        
+        <div class="toggle-container">
+            <label>Public</label>
+            <input type="checkbox" id="snippet-public">
+        </div>
+
         <button onclick="createSnippet()">Create Snippet</button>
         
         <h2>Retrieve Snippet</h2>
         <input type="text" id="snippet-id" placeholder="Enter Snippet ID">
         <button onclick="getSnippet()">Get Snippet</button>
         
+        <h2>Edit Snippet</h2>
+        <input type="text" id="edit-snippet-id" placeholder="Enter Snippet ID">
+        <textarea id="edit-snippet-content" placeholder="Edit your text here..."></textarea>
+        <button onclick="updateSnippet()">Update Snippet</button>
+
         <p id="output"></p>
     </div>
 
