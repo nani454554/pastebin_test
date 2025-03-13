@@ -1,10 +1,9 @@
 fastapi
 uvicorn
 sqlalchemy
-sqlite3
 pydantic
 passlib[bcrypt]
 pyjwt
 python-dotenv
-pytest==7.4.0
-httpx==0.24.1  # Required for FastAPI test client
+pytest
+httpx
