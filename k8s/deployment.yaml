@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: pastebin-app
-          image: your-dockerhub-username/pastebin-app:latest
+          image: nani4545/pastebin:latest
           ports:
             - containerPort: 8000
           resources:
@@ -24,9 +24,4 @@ spec:
             limits:
               cpu: "500m"      # Limit to 500 millicores (0.5 CPU)
               memory: "512Mi"  # Limit to 512MB of memory
-          volumeMounts:
-            - mountPath: "/data"
-              name: sqlite-storage
-      volumes:
-        - name: sqlite-storage
-          emptyDir: {}
+}
