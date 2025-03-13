@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pastebin-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: pastebin-app
+  template:
+    metadata:
+      labels:
+        app: pastebin-app
+    spec:
+      containers:
+        - name: pastebin-app
+          image: your-dockerhub-username/pastebin-app:latest
+          ports:
+            - containerPort: 8000
+          resources:
+            requests:
+              cpu: "250m"      # Request 250 millicores (0.25 CPU)
+              memory: "256Mi"  # Request 256MB of memory
+            limits:
+              cpu: "500m"      # Limit to 500 millicores (0.5 CPU)
+              memory: "512Mi"  # Limit to 512MB of memory
+          volumeMounts:
+            - mountPath: "/data"
+              name: sqlite-storage
+      volumes:
+        - name: sqlite-storage
+          emptyDir: {}
