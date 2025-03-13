@@ -6,7 +6,6 @@ from app.database import SessionLocal, engine, Base
 from app.models import Snippet
 from app.schemas import SnippetCreate, SnippetResponse
 from app.crud import create_snippet, get_snippet, update_snippet
-import os
 
 # Initialize database tables
 Base.metadata.create_all(bind=engine)
